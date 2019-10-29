@@ -12,27 +12,7 @@
   <script src="script.js"></script>
   <script id="glance-cobrowse" type="text/javascript" src="https://www.glancecdn.net/cobrowse/CobrowseJS.ashx?group=20541&site=staging" data-groupid="20541" data-site="staging"
     data-inputevents='{"ctrl-13" : "startSession", "ctrl-9" : "toggleButton"}' charset="UTF-8"></script>
-  <script>
-    var redirect = function() {
-      console.log("redirecting");
-      window.location = "https://glancepro.online";
-    };
-
-    window.addEventListener("load", event => {
-      console.log("the page loaded");
-      document.getElementById("redirect").addEventListener("click", redirect);
-      var contSession = function() {
-        GLANCE.Cobrowse.Visitor.continueSessionAt({
-          destination: "glancepro.online",
-          oncomplete: function() {
-            console.log("session continued on glancepro.online");
-          },
-          iewarningsuppressed: true
-        });
-      };
-      GLANCE.Cobrowse.Visitor.addEventListener("sessionstart", contSession);
-    });
-  </script>
+  <script src="crossdomain.js"></script>
 </head>
 
 <body>
