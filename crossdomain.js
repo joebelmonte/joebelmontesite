@@ -4,11 +4,10 @@ var redirect = function() {
 };
 
 window.addEventListener("load", event => {
-  console.log("the page loaded");
   document.getElementById("redirect").addEventListener("click", redirect);
 });
 
-var contSession = function() {
+GLANCE.Cobrowse.Visitor.addEventListener("sessionstart", () => {
   GLANCE.Cobrowse.Visitor.continueSessionAt({
     destination: "glancepro.online",
     oncomplete: function() {
@@ -16,5 +15,4 @@ var contSession = function() {
     },
     iewarningsuppressed: true
   });
-};
-GLANCE.Cobrowse.Visitor.addEventListener("sessionstart", contSession);
+});
