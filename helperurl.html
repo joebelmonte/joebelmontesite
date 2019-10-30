@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Glance CB Page</title>
+  <script id="cobrowsescript" type="text/javascript" src="https://www.glancecdn.net/cobrowse/CobrowseJS.ashx?group=20541&site=production" data-groupid="20541" data-site="production" data-cookiedomain="joebelmonte.site" charset="UTF-8"></script>
+  <!-- Note: you only need to use 'data-cookiedomain' if the hostname in the url is
+    one that we cannot automatically figure out a cookiedomain from. That is not
+    common. But if you do specify data-cookiedomain, the hostname must end with
+    that value. -->
+</head>
+
+<body>
+  <script>
+    window.addEventListener("DOMContentLoaded", function() {
+      window.setTimeout(function() {
+        document.getElementById("glance_yes").click();
+      }, 100);
+    });
+  </script>
+  <!-- This is needed for IE 11, which opens a modal that the user must click to accept before the page can be closed. -->
+</body>
+
+</html>
