@@ -1,5 +1,3 @@
-GLANCE.Cobrowse.Visitor.addEventListener("sessionstart");
-
 var contSession = function() {
   GLANCE.Cobrowse.Visitor.continueSessionAt({
     destination: "glancepro.online",
@@ -10,4 +8,14 @@ var contSession = function() {
   });
 };
 
-GLANCE.Cobrowse.Visitor.addEventListener("sessionstart", starting);
+window.addEventListener("load", event => {
+  document
+    .getElementById("redirect-button")
+    .addEventListener("click", contSession);
+});
+
+window.onload = event => {
+  document
+    .getElementById("redirect-button")
+    .addEventListener("click", contSession);
+};
