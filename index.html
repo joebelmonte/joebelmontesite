@@ -12,37 +12,6 @@
     />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
-    <script
-      id="glance-cobrowse"
-      type="text/javascript"
-      data-groupid="20541"
-      data-site="staging"
-      charset="UTF-8"
-    ></script>
-    <script>
-      document
-        .getElementById("glance-cobrowse")
-        .setAttribute(
-          "src",
-          "https://www.glancecdn.net/cobrowse/CobrowseJS.ashx?group=20541&site=staging"
-        );
-      document
-        .getElementById("glance-cobrowse")
-        .setAttribute("data-presence", "on");
-      document
-        .getElementById("glance-cobrowse")
-        .setAttribute("data-visitorid", "belmonte");
-      document
-        .getElementById("glance-cobrowse")
-        .setAttribute("data-presenceserver", "fidelity-presence.glance.net");
-      // document;
-      //     .getElementById("glance-cobrowse")
-      //     .setAttribute(
-      //       "src",
-      //       "https://www.glancecdn.net/cobrowse/CobrowseJS.ashx?group=20541&site=staging"
-      //     );
-      //
-    </script>
     <script>
       var map = {};
       onkeydown = onkeyup = function(e) {
@@ -54,6 +23,31 @@
             sessionKey: "GLANCE_KEYTYPE_RANDOM"
           });
         }
+      };
+    </script>
+    <script>
+      function addCobrowseScript() {
+        var theCobrowseScript = document.createElement("script");
+        var visitorId = document.getElementById("visitorId").value;
+        var groupId = document.getElementById("groupId").value;
+        theCobrowseScript.setAttribute("id", "glance-cobrowse");
+        theCobrowseScript.setAttribute("type", "text/javascript");
+        theCobrowseScript.setAttribute("data-groupid", groupId);
+        theCobrowseScript.setAttribute("data-site", "staging");
+        theCobrowseScript.setAttribute("charset", "UTF-8");
+        theCobrowseScript.setAttribute("data-visitorid", visitorId);
+        theCobrowseScript.setAttribute("data-presence", "on");
+        theCobrowseScript.setAttribute(
+          "src",
+          `https://www.glancecdn.net/cobrowse/CobrowseJS.ashx?group=${groupId}&site=staging`
+        );
+        document.head.append(theCobrowseScript);
+      }
+
+      window.onload = event => {
+        document
+          .getElementById("visitor-id-button")
+          .addEventListener("click", addCobrowseScript);
       };
     </script>
     <script src="crossdomain.js"></script>
@@ -89,6 +83,22 @@
         >Demonstration of a simple page layout using HTML5 tags: header, nav,
         section, main, article, aside, footer, address.</strong
       >
+      <form>
+        <input
+          type="text"
+          id="visitorId"
+          name="visitorId"
+          value="example"
+        /><br /><br />
+        <input
+          type="text"
+          id="groupId"
+          name="groupId"
+          value="20541"
+        /><br /><br />
+        <input type="button" value="Submit" id="visitor-id-button" />
+        <input type="reset" />
+      </form>
     </section>
     <section id="pageContent">
       <main role="main">
