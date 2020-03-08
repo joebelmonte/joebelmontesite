@@ -13,8 +13,8 @@ function prefixScript(url, onloadFunction) {
 
 function addCobrowseScript() {
   var theCobrowseScript = document.createElement("script");
-  var visitorId = "example";
-  var groupId = "20541";
+  var visitorId = document.getElementById("visitorId").value;
+  var groupId = document.getElementById("groupId").value;
   theCobrowseScript.setAttribute("id", "glance-cobrowse");
   theCobrowseScript.setAttribute("type", "text/javascript");
   theCobrowseScript.setAttribute("data-groupid", groupId);
