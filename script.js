@@ -36,15 +36,14 @@ function sessionStarted() {
   document.getElementById("status-message").innerHTML = "";
 }
 
-function addSessionStartListener() {
-  GLANCE.Cobrowse.Visitor.addEventListener("sessionstart", sessionStarted);
-}
-
 function submitClicked() {
+  console.log("submit button clicked at ", Date());
   addCobrowseScript();
   hideUserInput();
   showLoader();
-  setTimeout(addSessionStartListener, 2000);
+  document.getElementById("glance-cobrowse").onload = event => {
+    GLANCE.Cobrowse.Visitor.addEventListener("sessionstart", sessionStarted);
+  };
 }
 
 window.onload = event => {
