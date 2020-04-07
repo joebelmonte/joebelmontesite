@@ -1,1 +1,5 @@
-Some scrap work I did while working on suggestions for the crossdomain cobrowse documentation
+# My scrap site for working with Glance tools
+
+## Helpful links
+
+- [Self-Hosted Page](https://joebelmonte.site/selfhosted.html)
