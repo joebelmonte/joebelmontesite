@@ -2,4 +2,4 @@
 
 ## Helpful links
 
-- [Self-Hosted Page](https://joebelmonte.site/selfhosted.html)
+- <a href="https://joebelmonte.site/selfhosted.html" target="_blank">Self-Hosted Page</a>
