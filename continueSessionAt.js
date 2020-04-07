@@ -1,5 +1,3 @@
-GLANCE.Cobrowse.Visitor.addEventListener("sessionstart");
-
 var contSession = function() {
   GLANCE.Cobrowse.Visitor.continueSessionAt({
     destination: "glancepro.online",
@@ -9,5 +7,7 @@ var contSession = function() {
     iewarningsuppressed: true
   });
 };
+
+GLANCE.Cobrowse.Visitor.addEventListener("sessionstart", contSession);
 
 GLANCE.Cobrowse.Visitor.addEventListener("sessionstart", starting);
