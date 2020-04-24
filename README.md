@@ -1,1 +1,1 @@
-Some scrap work I did while working on suggestions for the crossdomain cobrowse documentation
+A page where the user can launch presence on the visitor side with arbitrary group and visitor ids.
