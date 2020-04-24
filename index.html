@@ -11,7 +11,7 @@
       content="Simple HTML5 Page layout template with header, footer, sidebar etc."
     />
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
     <script>
       var map = {};
       onkeydown = onkeyup = function(e) {
@@ -25,7 +25,7 @@
         }
       };
     </script>
-    <script src="crossdomain.js"></script>
+    <script src="chooseyourvisitor.js"></script>
     <style>
       .loader {
         border: 16px solid #f3f3f3;
@@ -99,12 +99,14 @@
       <div class="user-input-feedback">
         <div id="user-input">
           <form>
+            <p>Visitor ID:</p>
             <input
               type="text"
               id="visitorId"
               name="visitorId"
               value="example"
             /><br /><br />
+            <p>Group ID:</p>
             <input
               type="text"
               id="groupId"
